@@ -1,0 +1,97 @@
+:root {
+  --bg: #fff7fb;
+  --primary: #d80073;
+  --secondary: #6a00f4;
+  --text: #2b1230;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.subheader {
+  background: linear-gradient(130deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1.25rem 1.25rem 2.5rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1020px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.brand { margin: 0; font-size: 1.5rem; font-weight: 700; }
+
+.nav-links { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+.nav-links a { color: white; text-decoration: none; font-weight: 600; }
+
+.nav-links a[aria-current="page"] { text-decoration: underline; }
+
+.subheader-content { max-width: 1020px; margin: 2.5rem auto 0; }
+
+.section { max-width: 1020px; margin: 0 auto; padding: 2.2rem 1.25rem 3rem; }
+
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(63, 0, 99, 0.1);
+}
+
+.editor-note {
+  background: #f7eefe;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-producto label { display: block; margin-top: 0.75rem; font-weight: 600; }
+
+select {
+  width: 100%; margin-top: 0.25rem; padding: 0.55rem; border-radius: 8px;
+  border: 1px solid #d8c7e3; font: inherit;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: white;
+  color: var(--secondary);
+  font-weight: 700;
+  padding: 0.72rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-order { margin-top: 1rem; background: var(--secondary); color: white; }
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.25rem;
+  background: #2b1230;
+  color: #f8ebff;
+}
