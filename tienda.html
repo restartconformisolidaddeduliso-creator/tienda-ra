@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda RA | Tienda</title>
+    <meta
+      name="description"
+      content="Elige artículos, diseños y tipos de chapas personalizadas en Tienda RA."
+    />
+    <link rel="stylesheet" href="paginas.css" />
+  </head>
+  <body>
+    <header class="subheader">
+      <nav class="nav">
+        <p class="brand">Tienda RA</p>
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="tienda.html" aria-current="page">Tienda</a>
+          <a href="como-funciona.html">Cómo funciona</a>
+        </div>
+      </nav>
+      <div class="subheader-content">
+        <h1>Tienda de chapas</h1>
+        <p>Selecciona diseño y tipo para cada artículo.</p>
+      </div>
+    </header>
+
+    <main class="section">
+      <section class="editor-note">
+        <h2>Edición rápida desde este HTML</h2>
+        <p>
+          Para añadir o editar productos, modifica el bloque
+          <code>PRODUCTOS</code> al final de esta página. Cada producto tiene:
+          nombre, precio, diseños y tipos.
+        </p>
+      </section>
+
+      <section>
+        <h2>Artículos disponibles</h2>
+        <div id="productos" class="grid"></div>
+      </section>
+    </main>
+
+    <template id="producto-template">
+      <article class="card card-producto">
+        <h3 class="producto-nombre"></h3>
+        <p class="producto-precio"></p>
+
+        <label>Diseño: <select class="select-diseno"></select></label>
+        <label>Tipo: <select class="select-tipo"></select></label>
+
+        <button class="btn btn-order" type="button">Añadir al pedido</button>
+      </article>
+    </template>
+
+    <footer class="footer">
+      <p>¿Dudas? Escríbenos a hola@tiendara.es</p>
+    </footer>
+
+    <script>
+      // ====================== EDITA AQUÍ ======================
+      const PRODUCTOS = [
+        {
+          nombre: "Chapa clásica 38 mm",
+          precio: "0,70 € / unidad",
+          disenos: ["Logo empresa", "Cumpleaños", "Frase divertida"],
+          tipos: ["Mate", "Brillo", "Metalizado"]
+        },
+        {
+          nombre: "Chapa premium 58 mm",
+          precio: "0,95 € / unidad",
+          disenos: ["Ilustración", "Foto", "Minimalista"],
+          tipos: ["Con imperdible", "Con imán", "Con abrebotellas"]
+        },
+        {
+          nombre: "Pack bodas y eventos",
+          precio: "19,90 € / pack",
+          disenos: ["Romántico", "Floral", "Vintage"],
+          tipos: ["Invitados", "Novios", "Equipo de fiesta"]
+        }
+      ];
+      // ==================== FIN ZONA EDITABLE ====================
+
+      const contenedor = document.getElementById("productos");
+      const plantilla = document.getElementById("producto-template");
+
+      PRODUCTOS.forEach((producto) => {
+        const nodo = plantilla.content.cloneNode(true);
+        nodo.querySelector(".producto-nombre").textContent = producto.nombre;
+        nodo.querySelector(".producto-precio").textContent = producto.precio;
+
+        const selectDiseno = nodo.querySelector(".select-diseno");
+        producto.disenos.forEach((diseno) => {
+          const option = document.createElement("option");
+          option.value = diseno;
+          option.textContent = diseno;
+          selectDiseno.append(option);
+        });
+
+        const selectTipo = nodo.querySelector(".select-tipo");
+        producto.tipos.forEach((tipo) => {
+          const option = document.createElement("option");
+          option.value = tipo;
+          option.textContent = tipo;
+          selectTipo.append(option);
+        });
+
+        contenedor.append(nodo);
+      });
+    </script>
+  </body>
+</html>
