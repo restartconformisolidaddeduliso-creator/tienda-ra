@@ -38,19 +38,21 @@ body {
   font-weight: 700;
 }
 
-.nav-links {
+.top-pages-links {
+  max-width: 1000px;
+  margin: 0.9rem auto 0;
   display: flex;
   gap: 0.9rem;
   flex-wrap: wrap;
 }
 
-.nav-links a {
+.top-pages-links a {
   color: white;
   text-decoration: none;
   font-weight: 600;
 }
 
-.nav-links a[aria-current="page"] {
+.top-pages-links a[aria-current="page"] {
   text-decoration: underline;
 }
 
